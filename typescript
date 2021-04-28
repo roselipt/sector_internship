@@ -1,0 +1,156 @@
+Script started on 2021-04-14 12:05:53-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="123" LINES="41"]
+]0;outofastem@penguin: ~/projects/scraper-2020-03[01;32moutofastem@penguin[00m:[01;34m~/projects/scraper-2020-03[00m$ cat /var/lib/gems/2.5.0/extensions/x86_64-linux/2.5.0/pg-1.2.3/mkmf.log
+find_executable: checking for pg_config... -------------------- no
+
+--------------------
+
+find_header: checking for libpq-fe.h... -------------------- no
+
+"gcc -o conftest -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-ADJMZV/ruby2.5-2.5.5=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC conftest.c  -L. -L/usr/lib/x86_64-linux-gnu -L. -Wl,-z,relro -Wl,-z,now -fstack-protector -rdynamic -Wl,-export-dynamic     -lruby-2.5  -lpthread -lgmp -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"gcc -E -I/usr/include/x86_64-linux-gnu/ruby-2.5.0 -I/usr/include/ruby-2.5.0/ruby/backward -I/usr/include/ruby-2.5.0 -I. -Wdate-time -D_FORTIFY_SOURCE=2   -g -O2 -fdebug-prefix-map=/build/ruby2.5-ADJMZV/ruby2.5-2.5.5=. -fstack-protector-strong -Wformat -Werror=format-security -fPIC  conftest.c -o conftest.i"
+conftest.c:3:10: fatal error: libpq-fe.h: No such file or directory
+ #include <libpq-fe.h>
+          ^~~~~~~~~~~~
+compilation terminated.
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <libpq-fe.h>
+/* end */
+
+--------------------
+
+]0;outofastem@penguin: ~/projects/scraper-2020-03[01;32moutofastem@penguin[00m:[01;34m~/projects/scraper-2020-03[00m$ sudo apt-get install libpq-dev
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+Reading state information... 0%Reading state information... 0%Reading state information... Done
+The following additional packages will be installed:
+  libpq5
+Suggested packages:
+  postgresql-doc-11
+The following NEW packages will be installed:
+  libpq-dev libpq5
+0 upgraded, 2 newly installed, 0 to remove and 26 not upgraded.
+Need to get 333 kB of archives.
+After this operation, 1,464 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+0% [Working]            Get:1 https://deb.debian.org/debian buster/main amd64 libpq5 amd64 11.11-0+deb10u1 [169 kB]
+3% [1 libpq5 12.4 kB/169 kB 7%]                               50% [Waiting for headers]                         Get:2 https://deb.debian.org/debian buster/main amd64 libpq-dev amd64 11.11-0+deb10u1 [165 kB]
+57% [2 libpq-dev 26.6 kB/165 kB 16%]                                    100% [Working]              Fetched 333 kB in 0s (954 kB/s)
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package libpq5:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 72985 files and directories currently installed.)
+Preparing to unpack .../libpq5_11.11-0+deb10u1_amd64.deb ...
+Unpacking libpq5:amd64 (11.11-0+deb10u1) ...
+Selecting previously unselected package libpq-dev.
+Preparing to unpack .../libpq-dev_11.11-0+deb10u1_amd64.deb ...
+Unpacking libpq-dev (11.11-0+deb10u1) ...
+Setting up libpq5:amd64 (11.11-0+deb10u1) ...
+Setting up libpq-dev (11.11-0+deb10u1) ...
+Processing triggers for libc-bin (2.28-10) ...
+Processing triggers for man-db (2.8.5-2) ...
+]0;outofastem@penguin: ~/projects/scraper-2020-03[01;32moutofastem@penguin[00m:[01;34m~/projects/scraper-2020-03[00m$ bundle install
+Fetching gem metadata from https://rubygems.org/............
+Resolving dependencies...
+Using rake 13.0.3
+[33mFollowing files may not be writable, so sudo is needed:
+  /usr/local/bin
+  /var/lib/gems/2.5.0
+  /var/lib/gems/2.5.0/build_info
+  /var/lib/gems/2.5.0/cache
+  /var/lib/gems/2.5.0/doc
+  /var/lib/gems/2.5.0/extensions
+  /var/lib/gems/2.5.0/gems
+  /var/lib/gems/2.5.0/specifications[0m
+Using concurrent-ruby 1.1.8
+Using erubi 1.10.0
+Using racc 1.5.2
+Using crass 1.0.6
+Using rack 2.2.3
+Using nio4r 2.5.7
+Using websocket-extensions 0.1.5
+Using marcel 1.0.1
+Using mini_mime 1.0.3
+Using public_suffix 4.0.6
+Using bindex 0.8.1
+Using msgpack 1.4.2
+Using bundler 2.2.15
+Using byebug 11.1.3
+Using regexp_parser 2.1.1
+Using childprocess 3.0.0
+Using ffi 1.15.0
+Using rb-fsevent 0.10.4
+Using method_source 1.0.0
+[32mFetching pg 1.2.3[0m
+Using builder 3.2.4
+Using thor 1.1.0
+Using rubyzip 2.3.0
+Using tilt 2.0.10
+Using semantic_range 3.0.0
+Using spring 2.1.1
+Using turbolinks-source 5.2.0
+Using i18n 1.8.10
+Using tzinfo 2.0.4
+Using nokogiri 1.11.2 (x86_64-linux)
+Using minitest 5.14.4
+Using zeitwerk 2.4.2
+Using activesupport 6.1.3.1
+Using websocket-driver 0.7.3
+Using mail 2.7.1
+Using addressable 2.7.0
+Using bootsnap 1.7.3
+Using xpath 3.2.0
+Using rb-inotify 0.10.1
+Using puma 5.2.2
+Using rack-mini-profiler 2.3.1
+Using rack-proxy 0.6.5
+Using sprockets 4.0.2
+Using sassc 2.4.0
+Using selenium-webdriver 3.142.7
+Using turbolinks 5.2.1
+Using loofah 2.9.0
+Using rack-test 1.1.0
+Using rails-dom-testing 2.0.3
+Using globalid 0.4.2
+Using activemodel 6.1.3.1
+Using capybara 3.35.3
+Using jbuilder 2.11.2
+Using listen 3.5.1
+Using webdrivers 4.6.0
+Using rails-html-sanitizer 1.3.0
+Using activejob 6.1.3.1
+Using activerecord 6.1.3.1
+Using actionview 6.1.3.1
+Using actionpack 6.1.3.1
+Using actioncable 6.1.3.1
+Using activestorage 6.1.3.1
+Using actionmailer 6.1.3.1
+Using railties 6.1.3.1
+Using actionmailbox 6.1.3.1
+Using actiontext 6.1.3.1
+Using web-console 4.1.0
+Using webpacker 5.2.1
+Using sprockets-rails 3.2.2
+Using rails 6.1.3.1
+Using sassc-rails 2.1.2
+Using sass-rails 6.0.0
+[32mInstalling pg 1.2.3 with native extensions[0m
+[32mBundle complete! 17 Gemfile dependencies, 73 gems now installed.[0m
+[32mUse `bundle info [gemname]` to see where a bundled gem is installed.[0m
+]0;outofastem@penguin: ~/projects/scraper-2020-03[01;32moutofastem@penguin[00m:[01;34m~/projects/scraper-2020-03[00m$ stop scritp[K[Kpt
+bash: stop: command not found
+]0;outofastem@penguin: ~/projects/scraper-2020-03[01;32moutofastem@penguin[00m:[01;34m~/projects/scraper-2020-03[00m$ exit
+exit
+
+Script done on 2021-04-14 12:28:02-04:00 [COMMAND_EXIT_CODE="127"]
