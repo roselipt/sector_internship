@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2021_04_24_162009) do
     t.string "team"
     t.string "job_title"
     t.string "url"
+    t.string "job_description"
+    t.string "due_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
